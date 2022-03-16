@@ -11,7 +11,7 @@
 
 // Game initial Configs that can be changed
 // according to your preference
-#define amountRounds 4
+#define amountRounds 15
 int interval = 500;
 int sequence[amountRounds];
 
@@ -120,7 +120,7 @@ void checkingAnswers(){
   if (user_answer == -1){
     return; 
   }
-  
+  Serial.println("STATUS --> User trying"); 
   if (user_answer == sequence[answers]){
     answers++;
   }else{
@@ -238,7 +238,6 @@ void loop(){
       break;
       
     case user_answering:
-      Serial.println("STATUS --> User trying"); 
       checkingAnswers();
       break;
 
